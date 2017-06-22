@@ -15,7 +15,7 @@ type Cat struct {
 
 func NewCat(ctx context.Context, w io.Writer) *Cat {
 	c := new(Cat)
-	c.cmd = exec.CommandContext(ctx, "/bin/cat")
+	/*#nosec*/ c.cmd = exec.CommandContext(ctx, "/bin/cat")
 	c.cmd.Stdout = w
 	var err error
 	c.in, err = c.cmd.StdinPipe()
